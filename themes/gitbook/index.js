@@ -149,24 +149,17 @@ const LayoutBase = props => {
           }>
           {/* 左侧推拉抽屉 */}
           {fullWidth ? null : (
-            <div
+           <div
               className={
-                'hidden md:block border-r dark:border-transparent relative z-10 dark:bg-hexo-black-gray'
+                ''
               }>
-              <div className='w-72 pt-14 pb-4 px-6 sticky top-0 h-screen flex justify-between flex-col'>
+              <div className=''>
                 {/* 导航 */}
                 <div className='overflow-y-scroll scroll-hidden'>
-                  {/* 嵌入 */}
-                  {slotLeft}
-                  {/* 搜索框 */}
-                  <SearchInput className='my-3 rounded-md' />
 
-                  {/* 文章列表 */}
-                  {/* 所有文章列表 */}
-                  <NavPostList filteredNavPages={filteredNavPages} />
                 </div>
                 {/* 页脚 */}
-                <Footer {...props} />
+              
               </div>
             </div>
           )}
@@ -202,20 +195,18 @@ const LayoutBase = props => {
             </div>
 
             {/* 底部 */}
-            <div className='md:hidden'>
-              <Footer {...props} />
+            <div className=''>
             </div>
           </div>
 
           {/*  右侧侧推拉抽屉 */}
           {fullWidth ? null : (
             <div
-              style={{ width: '20rem' }}
+              style={{ width: '0rem' }}
               className={
-                'hidden xl:block dark:border-transparent flex-shrink-0 relative z-10 '
+                ''
               }>
-              <div className='py-14 px-6 sticky top-0'>
-                <ArticleInfo post={props?.post ? props?.post : props.notice} />
+              <div className=''>
 
                 <div className='py-4'>
                   {/* 桌面端目录 */}
@@ -249,7 +240,7 @@ const LayoutBase = props => {
         <PageNavDrawer {...props} filteredNavPages={filteredNavPages} />
 
         {/* 移动端底部导航栏 */}
-        <BottomMenuBar {...props} />
+        
       </div>
     </ThemeGlobalGitbook.Provider>
   )
